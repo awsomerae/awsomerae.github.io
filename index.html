@@ -472,6 +472,28 @@
         #dashboardExpenseTable th:nth-child(1), #dashboardExpenseTable td:nth-child(1) { width: 20%; }
         #dashboardExpenseTable th:nth-child(2), #dashboardExpenseTable td:nth-child(2) { width: 50%; }
         #dashboardExpenseTable th:nth-child(3), #dashboardExpenseTable td:nth-child(3) { width: 30%; }
+
+                /* Loading spinner */
+        .loader {
+            border: 5px solid #f3f3f3; /* Light grey */
+            border-top: 5px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -25px;
+            z-index: 1001; /* Above modal overlay */
+            display: none; /* Hidden by default */
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
     </style>
 </head>
 <body>

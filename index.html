@@ -7,12 +7,11 @@
     <link rel="icon" href="https://raw.githubusercontent.com/awsomerae/awsomerae.github.io/8149709b3b43c279ecf3d21314be3cb51f3db290/newgate.png" type="image/png">
     <style>
         /* project newgate , prod RAE */
-
-        /* === GitHub Style Redesign === */
+        /* Version 1.0 */
 
         /* 1. 기본 및 폰트 */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f6f8fa; /* GitHub 페이지 배경색 */
@@ -29,16 +28,16 @@
             font-weight: 600;
             color: #24292e;
         }
-        h2 { font-size: 1.75em; margin-bottom: 16px; }
+        h2 { font-size: 2em; margin-bottom: 16px; color: #0366d6;}
         h3 { font-size: 1.25em; margin-bottom: 12px; }
 
 
         /* 2. 컨테이너 */
         .container {
             max-width: none;
-            width: 90vw;
-            margin-left: 5vw;
-            margin-right: 5vw;
+            width: 96vw;
+            margin-left: 2vw;
+            margin-right: 2vw;
             background-color: #ffffff;
             padding: 24px;
             border: 1px solid #d1d5da;
@@ -77,7 +76,7 @@
         /* 4. 버튼 스타일 */
         .header .buttons button,
         .popup-content .button-group button,
-        .checkin-entry-form .save-button,
+        /* .checkin-entry-form .save-button, */ /* checkin-entry-form이 팝업으로 대체됨 */
         .dashboard-link .nav-button,
         .save-button-small, .delete-button-small {
             padding: 8px 16px;
@@ -191,7 +190,6 @@
             background-color: #fff;
             padding: 24px;
             border-radius: 6px;
-            /* border: 1px solid #d1d5da; */ /* 오버레이가 이미 테두리 역할 */
             box-shadow: 0 8px 24px rgba(149,157,165,0.2); /* GitHub 스타일의 그림자 */
             max-width: 700px;
             width: 90%;
@@ -323,7 +321,6 @@
         #adminPage .data-section table tr.selected,
         #accountTable tbody tr.selected { /* ID 직접 지정 */
             background-color: #f1f8ff !important; /* !important로 우선순위 */
-            /* border-left: 3px solid #0366d6; */ /* 선택 표시 방식 변경 가능 */
         }
         #adminPage .data-section table tr.selected td,
         #accountTable tbody tr.selected td {
@@ -338,43 +335,8 @@
         #accountTable th:nth-child(5), #accountTable td:nth-child(5) { width: 100px; } /* 직급 */
 
 
-        /* Check-in Page specific styles */
-        .checkin-entry-form {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            border: 1px solid #e1e4e8;
-        }
-        .checkin-entry-form h3 {
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-        }
-        .checkin-entry-form .form-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        .checkin-entry-form .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-        .checkin-entry-form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-        .checkin-entry-form input[type="text"],
-        .checkin-entry-form input[type="date"],
-        .checkin-entry-form select,
-        .checkin-entry-form textarea {
-            background-color: #fff; /* 입력 필드 흰색 배경 */
-            border: 1px solid #d1d5da;
-        }
-        .checkin-entry-form textarea { resize: vertical; }
+        /* Check-in Page specific styles (팝업으로 대체되면서 일부 불필요해질 수 있음) */
+        /* .checkin-entry-form 관련 스타일은 checkInPage 본문에 폼이 없을 경우 불필요 */
 
         .delete-button-small {
             padding: 4px 8px;
@@ -397,8 +359,8 @@
             min-width: 150px;
         }
 
-        /* Feedback Page specific styles */
-        #evalUserListTable tbody tr:hover { background-color: #f1f8ff; }
+        /* Feedback Page specific styles (현재 HTML에는 없음) */
+        /* #evalUserListTable tbody tr:hover { background-color: #f1f8ff; }
         .feedback-content-cell {
             max-width: 300px;
             white-space: normal !important;
@@ -414,8 +376,8 @@
         #userCheckInsTableForFeedback textarea:focus {
             background-color: #fff;
             border-color: #0366d6;
-        }
-        .save-button-small {
+        } */
+        .save-button-small { /* 피드백 저장 버튼 등에 사용될 수 있음 */
             padding: 5px 10px;
             font-size: 0.9em;
             background-color: #2ea44f;
@@ -462,18 +424,20 @@
             font-size: 0.9em;
             padding: 6px 12px;
         }
-        #dashboardCheckInTable th:nth-child(1), #dashboardCheckInTable td:nth-child(1) { width: 5%; }
-        #dashboardCheckInTable th:nth-child(2), #dashboardCheckInTable td:nth-child(2) { width: 45%; }
-        #dashboardCheckInTable th:nth-child(3), #dashboardCheckInTable td:nth-child(3) { width: 5%; }
-        #dashboardCheckInTable th:nth-child(4), #dashboardCheckInTable td:nth-child(4) { width: 45%; }
-        #dashboardPurchaseTable th:nth-child(1), #dashboardPurchaseTable td:nth-child(1) { width: 20%; }
-        #dashboardPurchaseTable th:nth-child(2), #dashboardPurchaseTable td:nth-child(2) { width: 50%; }
-        #dashboardPurchaseTable th:nth-child(3), #dashboardPurchaseTable td:nth-child(3) { width: 30%; }
-        #dashboardExpenseTable th:nth-child(1), #dashboardExpenseTable td:nth-child(1) { width: 20%; }
-        #dashboardExpenseTable th:nth-child(2), #dashboardExpenseTable td:nth-child(2) { width: 50%; }
-        #dashboardExpenseTable th:nth-child(3), #dashboardExpenseTable td:nth-child(3) { width: 30%; }
+        #dashboardCheckInTable th:nth-child(1), #dashboardCheckInTable td:nth-child(1) { width: 15%; } /* 일자 */
+        #dashboardCheckInTable th:nth-child(2), #dashboardCheckInTable td:nth-child(2) { width: 35%; } /* 내용 */
+        #dashboardCheckInTable th:nth-child(3), #dashboardCheckInTable td:nth-child(3) { width: 15%; } /* 상태 */
+        #dashboardCheckInTable th:nth-child(4), #dashboardCheckInTable td:nth-child(4) { width: 35%; } /* 피드백 */
 
-                /* Loading spinner */
+        #dashboardPurchaseTable th:nth-child(1), #dashboardPurchaseTable td:nth-child(1) { width: 25%; } /* 계산서일자 */
+        #dashboardPurchaseTable th:nth-child(2), #dashboardPurchaseTable td:nth-child(2) { width: 45%; } /* 물품명 */
+        #dashboardPurchaseTable th:nth-child(3), #dashboardPurchaseTable td:nth-child(3) { width: 30%; } /* 합계 */
+
+        #dashboardExpenseTable th:nth-child(1), #dashboardExpenseTable td:nth-child(1) { width: 25%; } /* 일자 */
+        #dashboardExpenseTable th:nth-child(2), #dashboardExpenseTable td:nth-child(2) { width: 45%; } /* 적요 */
+        #dashboardExpenseTable th:nth-child(3), #dashboardExpenseTable td:nth-child(3) { width: 30%; } /* 합계 */
+
+        /* Loading spinner */
         .loader {
             border: 5px solid #f3f3f3; /* Light grey */
             border-top: 5px solid #3498db; /* Blue */
@@ -494,38 +458,92 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Check-in 팝업 스타일 */
+        #checkInPopup .popup-content, #editCheckInPopup .popup-content {
+            max-width: 700px;
+            width: 90%;
+        }
+        #checkInPopup form, #editCheckInPopup form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2열 그리드 */
+            gap: 16px;
+        }
+        #checkInPopup .form-group.full-width, #editCheckInPopup .form-group.full-width {
+            grid-column: 1 / -1; /* 내용 필드는 전체 너비 사용 */
+        }
+        #checkInPopup textarea, #editCheckInPopup textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+        #checkInPopup .button-group, #editCheckInPopup .button-group {
+            grid-column: 1 / -1;
+            text-align: right;
+            margin-top: 10px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
     </style>
 </head>
 <body>
+    <div class="loader" id="loader" style="display:none;"></div>
 
     <script>
+        // === Loader 관련 함수 ===
+        function showLoader() {
+            const loader = document.getElementById('loader');
+            if (loader) loader.style.display = 'block';
+        }
+        function hideLoader() {
+            const loader = document.getElementById('loader');
+            if (loader) loader.style.display = 'none';
+        }
+
         const APPS_SCRIPT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyk5qTvZzF1cqNveAFMQ8f31v8S89PgaV9s504v7XsS3LasBeuNNr8jf4oSzKGdF0zP/exec'; // <-- ⭐ 실제 웹 앱 URL로 교체하세요 ⭐
         let loggedInUser = null;
         let currentEditingRowIndex = null;
-        let selectedAccountId = null; // 관리자 페이지에서 선택된 계정 ID (단일 클릭 시)
-        let currentEditingAccountData = null;
+        // let selectedAccountId = null; // 관리자 페이지에서 선택된 계정 ID (단일 클릭 시) -> currentEditingAccountData.ID로 대체 가능성 검토 또는 유지
+        let currentEditingAccountData = null; // 계정 수정 시 사용
 
         const ACCOUNT_HEADERS = ['ID', 'password', '소속', '성명', '직급'];
         const PURCHASE_HEADERS = ['담당자', '구매구분', '프로젝트', '국책과제여부', '구매품의번호', '구매품의명', '품의서링크', '구매처', '물품명', '단가', '수량', '공급가', '부가세', '합계', '세금계산서일자', '비고', '증빙'];
         const EXPENSE_HEADERS = ['담당자', '일자', '비목', '사용처', '적요', '공급가', '부가세', '합계', '비고' , '증빙'];
-        const CHECKIN_HEADERS = ['작성자ID', '일자', '구분', '내용', '상태', '피드백'];
+        const CHECKIN_HEADERS = ['작성자', '일자', '구분', '내용', '상태', '피드백']; // '작성자ID' -> '작성자'로 변경 (서버 응답 필드명과 일치 가정)
 
-        let usersToEvaluateGlobal = [];
-        let selectedUserForFeedbackId = null;
-        // let checkInToDeleteRowIndex = null; // 삭제됨
-        // let checkInToDeleteEntryId = null; // 삭제됨
+        // let usersToEvaluateGlobal = []; // 피드백 페이지 관련 (현재 HTML에 없음)
+        // let selectedUserForFeedbackId = null; // 피드백 페이지 관련
 
         function formatNumberWithCommas(number) {
-            if (number === null || number === undefined || number === '' || isNaN(parseFloat(String(number).replace(/,/g, '')))) {
+            const numStr = String(number).replace(/,/g, '');
+            if (numStr === null || numStr === undefined || numStr === '' || isNaN(parseFloat(numStr))) {
                 return '';
             }
             try {
-                return parseFloat(String(number).replace(/,/g, '')).toLocaleString('en-US');
+                return parseFloat(numStr).toLocaleString('en-US');
             } catch (e) {
                 console.error("Error formatting number:", number, e);
-                return number;
+                return String(number); // 오류 발생 시 원본 값 반환 (문자열로)
             }
         }
+        
+        function formatDateToYYYYMMDD(dateValue) {
+            if (!dateValue) return '';
+            try {
+                const dateObj = new Date(dateValue);
+                if (isNaN(dateObj.getTime())) return String(dateValue); // 유효하지 않은 날짜면 원본 반환
+
+                // UTC 기준으로 년, 월, 일 추출 (타임존 문제 회피)
+                const year = dateObj.getUTCFullYear();
+                const month = String(dateObj.getUTCMonth() + 1).padStart(2, '0');
+                const day = String(dateObj.getUTCDate()).padStart(2, '0');
+                return `${year}-${month}-${day}`;
+            } catch (e) {
+                console.error("Error formatting date:", dateValue, e);
+                return String(dateValue);
+            }
+        }
+
 
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(page => {
@@ -534,26 +552,29 @@
             const pageElement = document.getElementById(pageId);
 
             if (pageId === 'loginPage') {
-                pageElement.style.display = 'flex';
+                if(pageElement) pageElement.style.display = 'flex';
             } else {
-                pageElement.style.display = 'block';
+                if(pageElement) pageElement.style.display = 'block';
             }
 
-            if (loggedInUser) { // 로그인된 상태에서만 사용자 정보 업데이트 및 데이터 로드
-                updateUserInfo(); // 네비게이션 버튼 상태 등 업데이트
+            if (loggedInUser) {
+                updateUserInfo();
 
                 if (pageId === 'purchasePage') loadPurchaseData();
                 else if (pageId === 'expensePage') loadExpenseData();
                 else if (pageId === 'adminPage' && loggedInUser.isAdmin) loadAccountData();
                 else if (pageId === 'checkInPage') {
                     loadCheckInData();
-                    document.getElementById('checkInEntryAuthor').value = loggedInUser.name;
-                    document.getElementById('checkInEntryDate').valueAsDate = new Date();
-                    clearCheckInInputs(false);
-                } else if (pageId === 'feedbackPage' && (loggedInUser.isEvaluator || loggedInUser.isAdmin)) {
-                    loadUsersToEvaluate();
-                    document.getElementById('userCheckInsForFeedbackSection').style.display = 'none';
-                } else if (pageId === 'dashboardPage') {
+                    // Check-in 페이지 직접 입력 폼 관련 코드는 팝업으로 대체되었으므로 주석 처리 또는 삭제
+                    // document.getElementById('checkInEntryAuthor').value = loggedInUser.name;
+                    // document.getElementById('checkInEntryDate').valueAsDate = new Date();
+                    // clearCheckInInputs(false); // 이 함수도 필요 없을 수 있음
+                }
+                // else if (pageId === 'feedbackPage' && (loggedInUser.isEvaluator || loggedInUser.isAdmin)) {
+                    // loadUsersToEvaluate(); // 피드백 페이지 관련
+                    // document.getElementById('userCheckInsForFeedbackSection').style.display = 'none';
+                // }
+                else if (pageId === 'dashboardPage') {
                     loadDashboardData();
                 }
             }
@@ -561,26 +582,24 @@
         
         function updateUserInfo() {
             if (loggedInUser) {
-                const userInfoSpans = document.querySelectorAll('.user-info span');
+                const userInfoSpans = document.querySelectorAll('.user-info span'); // ID 대신 클래스로 전체 선택
                 const userInfoText = `사용자: ${loggedInUser.affiliation || '소속없음'} ${loggedInUser.name} ${loggedInUser.position || '직급없음'}`;
                 userInfoSpans.forEach(span => {
                     span.textContent = userInfoText;
                 });
 
-                const adminNavButtons = document.querySelectorAll('[id^="navButtonAdminPage"]');
+                const adminNavButtons = document.querySelectorAll('[id^="navButtonAdminPage"]'); // 관리자 버튼 전체
                 adminNavButtons.forEach(button => {
                     button.style.display = loggedInUser.isAdmin ? 'inline-block' : 'none';
                 });
 
-                const feedbackNavButtons = document.querySelectorAll('[id^="navButtonFeedbackPage"]');
-                // loggedInUser.isEvaluator는 로그인 응답에 포함되어야 합니다.
-                // isAdmin도 isEvaluator 역할을 할 수 있도록 로직 추가
-                const canShowFeedbackButton = loggedInUser.isAdmin || loggedInUser.isEvaluator;
+                const feedbackNavButtons = document.querySelectorAll('[id^="navButtonFeedbackPage"]'); // 피드백 버튼 전체
+                const canShowFeedbackButton = loggedInUser.isAdmin || loggedInUser.isEvaluator; // isEvaluator는 로그인 응답에 포함되어야 함
                 feedbackNavButtons.forEach(button => {
                     button.style.display = canShowFeedbackButton ? 'inline-block' : 'none';
                 });
 
-            } else { // 로그아웃 시 모든 관련 버튼 숨김
+            } else {
                 document.querySelectorAll('.user-info span').forEach(s => s.textContent = '');
                 document.querySelectorAll('[id^="navButtonAdminPage"]').forEach(b => b.style.display = 'none');
                 document.querySelectorAll('[id^="navButtonFeedbackPage"]').forEach(b => b.style.display = 'none');
@@ -598,12 +617,13 @@
             if (popup) {
                 popup.style.display = 'none';
                 const form = popup.querySelector('form');
-                if (form) form.reset(); // 팝업 닫을 때 폼 초기화
+                if (form) form.reset();
             }
         }
 
         function showInfoPopup(message) {
-            document.getElementById('infoPopupMessage').innerText = message;
+            const msgElem = document.getElementById('infoPopupMessage');
+            if(msgElem) msgElem.innerText = message;
             showPopup('infoPopup');
         }
 
@@ -611,20 +631,27 @@
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'text/plain;charset=utf-8', },
-                body: JSON.stringify({ action: action, payload: payload, user: loggedInUser ? { ID: loggedInUser.ID, name: loggedInUser.name, isAdmin: loggedInUser.isAdmin } : null }) // 사용자 정보 추가
+                body: JSON.stringify({ 
+                    action: action, 
+                    payload: payload, 
+                    user: loggedInUser ? { ID: loggedInUser.ID, name: loggedInUser.name, isAdmin: loggedInUser.isAdmin, affiliation: loggedInUser.affiliation, position: loggedInUser.position } : null 
+                })
             };
             try {
+                showLoader(); // 요청 시작 시 로더 표시
                 const response = await fetch(APPS_SCRIPT_WEB_APP_URL, requestOptions);
+                hideLoader(); // 응답 수신 후 로더 숨김
                 if (!response.ok) {
                     const errorText = await response.text();
                     console.error('HTTP error', response.status, errorText);
                     return { status: 'error', message: `HTTP 오류: ${response.status}. ${errorText}` };
                 }
                 const data = await response.json();
-                console.log('API Response:', data);
+                console.log('API Response:', action, data);
                 return data;
             } catch (error) {
-                console.error('API Request Error:', error);
+                hideLoader(); // 오류 발생 시 로더 숨김
+                console.error('API Request Error:', action, error);
                 return { status: 'error', message: `네트워크 오류: ${error.message}. URL 또는 배포를 확인하세요.` };
             }
         }
@@ -632,6 +659,8 @@
         async function handleLogin() {
             const idInput = document.getElementById('loginId');
             const passwordInput = document.getElementById('loginPassword');
+            if(!idInput || !passwordInput) return;
+
             const id = idInput.value;
             const password = passwordInput.value;
 
@@ -642,83 +671,77 @@
             const response = await sendRequest('login', { id: id, password: password });
 
             if (response.status === 'success' && response.user) {
-                loggedInUser = response.user; // 서버로부터 받은 사용자 정보로 업데이트
+                loggedInUser = response.user;
                 console.log('로그인 성공:', loggedInUser);
-                updateUserInfo(); // 모든 페이지의 사용자 정보 및 네비 버튼 업데이트
-
-                if (loggedInUser.isAdmin) {
-                    showPage('dashboardPage'); // 관리자도 우선 대시보드로
-                } else {
-                    showPage('dashboardPage');
-                }
+                updateUserInfo();
+                showPage('dashboardPage'); // 로그인 성공 시 대시보드로 이동
                 idInput.value = '';
                 passwordInput.value = '';
             } else {
                 showInfoPopup(response.message || '로그인 실패');
             }
         }
-        // 엔터키 로그인
-        addEventListener('keypress', function(event) {
+        
+        // 엔터키 로그인 (로그인 페이지에서만 동작하도록 개선 가능)
+        document.getElementById('loginPassword')?.addEventListener('keypress', function(event) {
             if (event.key === 'Enter') {
-                handleLogin();
+                if(document.getElementById('loginPage').style.display === 'flex') { // 로그인 페이지 활성화 시
+                    handleLogin();
+                }
             }
         });
 
 
-
         function openNewAccountPopup() {
-            // 폼 필드 초기화
-            document.getElementById('newAccountId').value = '';
-            document.getElementById('newUserPassword').value = '';
-            document.getElementById('newUserAffiliation').value = '';
-            document.getElementById('newUserName').value = '';
-            document.getElementById('newUserPosition').value = '';
+            const form = document.querySelector('#newUserPopup form');
+            if(form) form.reset();
             showPopup('newUserPopup');
         }
 
 
         async function handleCreateNewAccount() {
-            const id = document.getElementById('newAccountId').value;
-            const password = document.getElementById('newUserPassword').value;
-            const affiliation = document.getElementById('newUserAffiliation').value;
-            const name = document.getElementById('newUserName').value;
-            const position = document.getElementById('newUserPosition').value;
+            const idInput = document.getElementById('newAccountId');
+            const passwordInput = document.getElementById('newUserPassword');
+            const affiliationInput = document.getElementById('newUserAffiliation');
+            const nameInput = document.getElementById('newUserName');
+            const positionInput = document.getElementById('newUserPosition');
+
+            if(!idInput || !passwordInput || !affiliationInput || !nameInput || !positionInput) return;
+
+            const id = idInput.value;
+            const password = passwordInput.value;
+            const affiliation = affiliationInput.value;
+            const name = nameInput.value;
+            const position = positionInput.value;
 
             if (!id || !password || !name) {
                 showInfoPopup('ID, 비밀번호, 성명은 필수 입력 항목입니다.');
                 return;
             }
-            const payload = { 
-                ID: id, 
-                password: password, 
-                소속: affiliation, 
-                성명: name, 
-                직급: position 
-            };
+            const payload = { ID: id, password: password, 소속: affiliation, 성명: name, 직급: position };
 
             const response = await sendRequest('createUser', payload);
             if (response.status === 'success') {
-                showInfoPopup(response.message);
+                showInfoPopup(response.message || "계정이 성공적으로 생성되었습니다.");
                 closePopup('newUserPopup');
-                if (loggedInUser && loggedInUser.isAdmin && document.getElementById('adminPage').style.display === 'block') {
-                    document.getElementById('infoPopupOkButton').onclick = () => {
-                        closePopup('infoPopup');
-                        loadAccountData();
-                    };
+                if (loggedInUser && loggedInUser.isAdmin && document.getElementById('adminPage')?.style.display === 'block') {
+                    const okButton = document.getElementById('infoPopupOkButton');
+                    if(okButton) okButton.onclick = () => { closePopup('infoPopup'); loadAccountData(); };
                 }
             } else {
-                showInfoPopup(response.message);
+                showInfoPopup(response.message || "계정 생성에 실패했습니다.");
             }
         }
 
         function displayDataInTable(data, tableId, headers, editable = false, onRowDoubleClickCallback = null) {
             const tableBody = document.querySelector(`#${tableId} tbody`);
+            if (!tableBody) return;
             tableBody.innerHTML = '';
 
             if (!data || data.length === 0) {
                 const row = tableBody.insertRow();
                 const cell = row.insertCell();
-                cell.colSpan = headers.length; // 삭제 컬럼이 없어졌으므로 headers.length로 통일
+                cell.colSpan = headers.length;
                 cell.innerText = '데이터가 없습니다.';
                 cell.style.textAlign = 'center';
                 return;
@@ -732,38 +755,28 @@
 
             data.forEach(rowData => {
                 const row = tableBody.insertRow();
-                if(rowData.rowIndex) row.dataset.rowIndex = rowData.rowIndex;
-                if(rowData.ID) row.dataset.userId = rowData.ID; // for accountTable
-                if(rowData.EntryID) row.dataset.entryId = rowData.EntryID; // for checkInTable
+                if(rowData.rowIndex !== undefined) row.dataset.rowIndex = rowData.rowIndex; // 0도 유효한 값
+                if(rowData.ID) row.dataset.userId = rowData.ID; 
+                if(rowData.EntryID) row.dataset.entryId = rowData.EntryID;
 
-                headers.forEach((header, colIdx) => {
+                headers.forEach((header) => {
                     const cell = row.insertCell();
-                    let cellValue = rowData[header] === undefined ? '' : rowData[header];
+                    let cellValue = rowData[header] === undefined || rowData[header] === null ? '' : rowData[header];
 
                     if (numericCols.includes(header) && cellValue !== '') {
                         cellValue = formatNumberWithCommas(cellValue);
                         cell.classList.add('numeric');
                     } else if ((header === '세금계산서일자' || header === '일자') && cellValue) {
-                        // 날짜 오류 수정: toISOString 대신 yyyy-mm-dd 직접 변환
-                        try {
-                            const dateObj = new Date(cellValue);
-                            if (!isNaN(dateObj.getTime())) {
-                                // 타임존 보정 없이 yyyy-mm-dd 추출
-                                const yyyy = dateObj.getFullYear();
-                                const mm = String(dateObj.getMonth() + 1).padStart(2, '0');
-                                const dd = String(dateObj.getDate()).padStart(2, '0');
-                                cellValue = `${yyyy}-${mm}-${dd}`;
-                            }
-                        } catch (e) { /* no-op */ }
+                        cellValue = formatDateToYYYYMMDD(cellValue);
                     }
 
-                    if (header === '품의서링크' || (header === '증빙' && tableId !== 'checkInTable')) { // CheckInTable의 증빙은 링크가 아님
+                    if (header === '품의서링크' || (header === '증빙' && tableId !== 'checkInTable')) {
                         if (cellValue) {
                             const link = document.createElement('a');
                             link.href = cellValue;
                             link.innerText = '링크';
                             link.target = '_blank';
-                            link.onclick = function(event) { event.stopPropagation(); /* 새 창 열기는 기본 동작 */ };
+                            link.onclick = function(event) { event.stopPropagation(); };
                             cell.innerHTML = '';
                             cell.appendChild(link);
                         } else {
@@ -774,61 +787,51 @@
                     }
                 });
 
-                if (editable && onRowDoubleClickCallback && tableId !== 'checkInTable') { // 구매, 경비는 수정 팝업
+                if (editable && onRowDoubleClickCallback && (tableId === 'purchaseTable' || tableId === 'expenseTable')) {
                      row.ondblclick = () => onRowDoubleClickCallback(tableId, rowData);
-                } else if (tableId === 'accountTable' && onRowDoubleClickCallback) { // 계정은 계정 수정 팝업
-                     row.ondblclick = () => onRowDoubleClickCallback(rowData); // openEditAccountPopup
-                     row.onclick = (event) => handleAccountRowClick(event); // 단일 클릭 이벤트
-                } else if (tableId === 'checkInTable') { // Check-in 테이블은 더블클릭 시 수정 팝업
-                    row.ondblclick = () => openEditCheckInPopup(rowData);
+                } else if (tableId === 'accountTable' && onRowDoubleClickCallback) {
+                     row.ondblclick = () => onRowDoubleClickCallback(rowData);
+                     row.onclick = (event) => handleAccountRowClick(event);
+                } else if (tableId === 'checkInTable' && onRowDoubleClickCallback) { 
+                    row.ondblclick = () => onRowDoubleClickCallback(rowData); // openEditCheckInPopup
                 }
             });
         }
         
-        // 구매관리 데이터 로드
         async function loadPurchaseData() {
             if (!loggedInUser) return;
-            const response = await sendRequest('getPurchaseData', {
-                userName: loggedInUser.name,
-                isAdmin: loggedInUser.isAdmin
-            });
+            const response = await sendRequest('getPurchaseData'); // userName, isAdmin은 sendRequest에서 자동 포함
             if (response.status === 'success') {
                 displayDataInTable(response.data, 'purchaseTable', PURCHASE_HEADERS, true, openEditPopup);
             } else {
-                showInfoPopup('구매 관리 데이터를 불러오는데 실패했습니다: ' + response.message);
+                showInfoPopup('구매 관리 데이터를 불러오는데 실패했습니다: ' + (response.message || '알 수 없는 오류'));
                 displayDataInTable([], 'purchaseTable', PURCHASE_HEADERS, true, openEditPopup);
             }
         }
 
-        // 개인경비 데이터 로드
         async function loadExpenseData() {
             if (!loggedInUser) return;
-            const response = await sendRequest('getExpenseData', {
-                userName: loggedInUser.name,
-                isAdmin: loggedInUser.isAdmin
-            });
+            const response = await sendRequest('getExpenseData');
             if (response.status === 'success') {
                 displayDataInTable(response.data, 'expenseTable', EXPENSE_HEADERS, true, openEditPopup);
             } else {
-                showInfoPopup('개인 경비 데이터를 불러오는데 실패했습니다: ' + response.message);
+                showInfoPopup('개인 경비 데이터를 불러오는데 실패했습니다: ' + (response.message || '알 수 없는 오류'));
                 displayDataInTable([], 'expenseTable', EXPENSE_HEADERS, true, openEditPopup);
             }
         }
         
-        // 계정 정보 로드
         async function loadAccountData() {
             if (!loggedInUser || !loggedInUser.isAdmin) return;
-            const response = await sendRequest('getAccounts'); // isAdmin 정보는 sendRequest에서 user 객체에 담아 보냄
+            const response = await sendRequest('getAccounts');
             if (response.status === 'success') {
                 displayDataInTable(response.accounts, 'accountTable', ACCOUNT_HEADERS, false, openEditAccountPopup);
             } else {
-                showInfoPopup('계정 정보를 불러오는데 실패했습니다: ' + response.message);
+                showInfoPopup('계정 정보를 불러오는데 실패했습니다: ' + (response.message || '알 수 없는 오류'));
                 displayDataInTable([], 'accountTable', ACCOUNT_HEADERS, false, openEditAccountPopup);
             }
         }
 
         function setupSumCalculation(popupId, supplyPriceName, vatName, sumName) {
-            // popupId는 팝업의 id, form은 popupId 내의 form
             const popup = document.getElementById(popupId);
             if (!popup) return;
             const form = popup.querySelector('form');
@@ -850,15 +853,15 @@
                     input.addEventListener('input', calculateSum);
                     input.addEventListener('blur', () => {
                         if (input.value) input.value = formatNumberWithCommas(input.value);
-                        calculateSum();
+                        calculateSum(); // blur 시에도 합계 재계산
                     });
                 });
-                if (supplyPriceInput.value || vatInput.value) calculateSum();
+                if (supplyPriceInput.value || vatInput.value) calculateSum(); // 초기 로드 시 계산
             }
         }
 
         function openNewEntryPopup(type) {
-            currentEditingRowIndex = null;
+            currentEditingRowIndex = null; // 신규 작성이므로 이전 편집 인덱스 초기화
             const popupId = type === 'purchase' ? 'newPurchasePopup' : 'newExpensePopup';
             const popup = document.getElementById(popupId);
             if (!popup) return;
@@ -866,28 +869,31 @@
             if (!form) return;
             form.reset();
 
-            // 담당자 자동 입력
             if (loggedInUser && form.elements['담당자']) {
                 form.elements['담당자'].value = loggedInUser.name;
                 form.elements['담당자'].readOnly = true;
             }
+            if (type === 'purchase' && form.elements['세금계산서일자']) {
+                 form.elements['세금계산서일자'].value = formatDateToYYYYMMDD(new Date());
+            } else if (type === 'expense' && form.elements['일자']) {
+                 form.elements['일자'].value = formatDateToYYYYMMDD(new Date());
+            }
+
 
             setupSumCalculation(popupId, '공급가', '부가세', '합계');
             showPopup(popupId);
         }
 
         function openEditPopup(tableId, rowData) {
-            currentEditingRowIndex = rowData.rowIndex;
-            let popupId, headers, formPrefix;
+            currentEditingRowIndex = rowData.rowIndex; // 수정할 행의 인덱스 저장
+            let popupId, headers;
 
             if (tableId === 'purchaseTable') {
                 popupId = 'editPurchasePopup';
                 headers = PURCHASE_HEADERS;
-                formPrefix = 'editPurchase_';
             } else if (tableId === 'expenseTable') {
                 popupId = 'editExpensePopup';
                 headers = EXPENSE_HEADERS;
-                formPrefix = 'editExpense_';
             } else { return; }
 
             const form = document.querySelector(`#${popupId} form`);
@@ -895,56 +901,48 @@
             form.reset();
 
             headers.forEach(header => {
-                const input = form.elements[header]; // name으로 찾기
+                const input = form.elements[header];
                 if (input) {
-                    let value = rowData[header] === undefined ? '' : rowData[header];
+                    let value = rowData[header] === undefined || rowData[header] === null ? '' : rowData[header];
                     if ((header === '세금계산서일자' || header === '일자') && value) {
-                        try {
-                            const dateObj = new Date(value);
-                            if (!isNaN(dateObj.getTime())) input.value = dateObj.toISOString().split('T')[0];
-                            else input.value = value;
-                        } catch (e) { input.value = value; }
+                        input.value = formatDateToYYYYMMDD(value);
                     } else if (['단가', '수량', '공급가', '부가세', '합계'].includes(header)) {
-                        input.value = formatNumberWithCommas(value); // 숫자 필드 포맷팅
-                    }
-                    else {
+                        input.value = formatNumberWithCommas(value);
+                    } else {
                         input.value = value;
                     }
-                    input.readOnly = (header === '담당자');
+                    if (header === '담당자') input.readOnly = true;
                 }
             });
-             if (tableId === 'purchaseTable') {
-                setupSumCalculation(popupId, '공급가', '부가세', '합계');
-            } else if (tableId === 'expenseTable') {
-                setupSumCalculation(popupId, '공급가', '부가세', '합계');
-            }
+            setupSumCalculation(popupId, '공급가', '부가세', '합계');
             showPopup(popupId);
         }
         
         async function handleSaveData(type) {
-            const popupId = type === 'purchase' ? (currentEditingRowIndex ? 'editPurchasePopup' : 'newPurchasePopup') : (currentEditingRowIndex ? 'editExpensePopup' : 'newExpensePopup');
+            const isEditMode = currentEditingRowIndex !== null && currentEditingRowIndex !== undefined;
+            const popupId = type === 'purchase' 
+                ? (isEditMode ? 'editPurchasePopup' : 'newPurchasePopup') 
+                : (isEditMode ? 'editExpensePopup' : 'newExpensePopup');
             const form = document.querySelector(`#${popupId} form`);
             if (!form) return;
 
             const dataObject = {};
             const headers = type === 'purchase' ? PURCHASE_HEADERS : EXPENSE_HEADERS;
-            let isValid = true; // 간단한 유효성 검사 플래그 (필요시 확장)
+            let isValid = true;
 
             headers.forEach(header => {
                 const input = form.elements[header];
                 if (input) {
-                    // 숫자 필드는 콤마 제거 후 저장
                     if (['단가', '수량', '공급가', '부가세', '합계'].includes(header)) {
                          dataObject[header] = String(input.value).replace(/,/g, '');
                     } else {
                         dataObject[header] = input.value;
                     }
-                } else if (header === '담당자' && loggedInUser && !currentEditingRowIndex) { // 신규 작성 시 담당자 자동 입력
+                } else if (header === '담당자' && loggedInUser && !isEditMode) {
                     dataObject[header] = loggedInUser.name;
                 }
             });
             
-            // 필수 입력 필드 검증 예시 (구매품의명, 물품명 등)
             if (type === 'purchase' && (!dataObject['구매품의명'] || !dataObject['물품명'])) {
                 showInfoPopup('구매품의명과 물품명은 필수 입력 항목입니다.');
                 isValid = false;
@@ -955,44 +953,47 @@
             }
             if(!isValid) return;
 
-
-            let response;
             const action = type === 'purchase'
-                ? (currentEditingRowIndex ? 'updatePurchase' : 'createPurchase')
-                : (currentEditingRowIndex ? 'updateExpense' : 'createExpense');
+                ? (isEditMode ? 'updatePurchase' : 'createPurchase')
+                : (isEditMode ? 'updateExpense' : 'createExpense');
             
-            const payload = currentEditingRowIndex 
+            const payload = isEditMode 
                 ? { rowIndex: currentEditingRowIndex, data: dataObject } 
                 : { data: dataObject };
 
-            response = await sendRequest(action, payload);
+            const response = await sendRequest(action, payload);
 
             if (response.status === 'success') {
-                showInfoPopup(response.message);
+                showInfoPopup(response.message || "데이터가 성공적으로 저장되었습니다.");
                 closePopup(popupId);
                 const reloadFunction = type === 'purchase' ? loadPurchaseData : loadExpenseData;
-                document.getElementById('infoPopupOkButton').onclick = () => {
-                    closePopup('infoPopup');
-                    reloadFunction();
-                };
+                const okButton = document.getElementById('infoPopupOkButton');
+                if(okButton) okButton.onclick = () => { closePopup('infoPopup'); reloadFunction(); };
             } else {
-                showInfoPopup(response.message);
+                showInfoPopup(response.message || "데이터 저장에 실패했습니다.");
             }
+            currentEditingRowIndex = null; // 작업 후 초기화
         }
 
         function handleDeleteConfirmation(type) {
-            if (!currentEditingRowIndex) {
-                showInfoPopup('삭제할 항목이 선택되지 않았습니다.');
+            if (currentEditingRowIndex === null || currentEditingRowIndex === undefined) {
+                showInfoPopup('삭제할 항목이 선택되지 않았습니다. 목록에서 더블클릭하여 선택해주세요.');
                 return;
             }
-            document.getElementById('confirmDeleteMessage').innerText = '정말 이 항목을 삭제하시겠습니까?';
+            const confirmMsg = document.getElementById('confirmDeleteMessage');
+            if(confirmMsg) confirmMsg.innerText = '정말 이 항목을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.';
+            
+            const okButton = document.getElementById('confirmDeleteOkButton');
+            if(okButton) okButton.onclick = () => handleDeleteData(type);
+            
+            const cancelButton = document.getElementById('confirmDeleteCancelButton');
+            if(cancelButton) cancelButton.onclick = () => closePopup('confirmDeletePopup');
+            
             showPopup('confirmDeletePopup');
-            document.getElementById('confirmDeleteOkButton').onclick = () => handleDeleteData(type);
-            document.getElementById('confirmDeleteCancelButton').onclick = () => closePopup('confirmDeletePopup');
         }
 
         async function handleDeleteData(type) {
-            if (!currentEditingRowIndex) {
+            if (currentEditingRowIndex === null || currentEditingRowIndex === undefined) {
                 showInfoPopup('삭제할 항목이 없습니다.');
                 closePopup('confirmDeletePopup');
                 return;
@@ -1002,18 +1003,17 @@
             const response = await sendRequest(action, { rowIndex: currentEditingRowIndex });
 
             if (response.status === 'success') {
-                showInfoPopup(response.message);
+                showInfoPopup(response.message || "항목이 성공적으로 삭제되었습니다.");
                 const reloadFunction = type === 'purchase' ? loadPurchaseData : loadExpenseData;
-                document.getElementById('infoPopupOkButton').onclick = () => {
-                    closePopup('infoPopup');
-                    reloadFunction();
-                };
+                const okButton = document.getElementById('infoPopupOkButton');
+                if(okButton) okButton.onclick = () => { closePopup('infoPopup'); reloadFunction(); };
+                
                 const editPopupId = type === 'purchase' ? 'editPurchasePopup' : 'editExpensePopup';
-                closePopup(editPopupId); // 수정 팝업도 닫기
+                closePopup(editPopupId); 
             } else {
-                showInfoPopup(response.message);
+                showInfoPopup(response.message || "항목 삭제에 실패했습니다.");
             }
-            currentEditingRowIndex = null;
+            currentEditingRowIndex = null; // 작업 후 초기화
         }
 
         function handleAccountRowClick(event) {
@@ -1021,21 +1021,20 @@
             const clickedRow = event.target.closest('tr');
             if (clickedRow) {
                 clickedRow.classList.add('selected');
-                selectedAccountId = clickedRow.dataset.userId; // 'data-user-id' 속성 사용
-                console.log('Selected Account ID (single click):', selectedAccountId);
-            } else {
-                selectedAccountId = null;
+                // selectedAccountId = clickedRow.dataset.userId; // 이 변수 대신 currentEditingAccountData 사용 고려
+                // console.log('Selected Account ID (single click):', selectedAccountId);
             }
         }
         
         function openEditAccountPopup(rowData) {
-            currentEditingAccountData = rowData;
-            currentEditingRowIndex = rowData.rowIndex;
+            currentEditingAccountData = rowData; // 수정할 계정 데이터 저장
+            // currentEditingRowIndex = rowData.rowIndex; // 계정 정보는 rowIndex가 없을 수 있음. ID로 식별
 
             const form = document.querySelector('#editAccountPopup form');
+            if(!form) return;
             form.reset();
             form.elements['ID'].value = rowData.ID || '';
-            form.elements['password'].value = '';
+            form.elements['password'].value = ''; // 비밀번호는 항상 비워둠
             form.elements['password'].placeholder = '새 비밀번호 (변경 시에만 입력)';
             form.elements['소속'].value = rowData.소속 || '';
             form.elements['성명'].value = rowData.성명 || '';
@@ -1045,11 +1044,13 @@
         }
 
         async function handleSaveAccountData() {
-            if (!currentEditingAccountData) {
+            if (!currentEditingAccountData || !currentEditingAccountData.ID) {
                 showInfoPopup('수정할 계정 정보가 없습니다.');
                 return;
             }
             const form = document.querySelector('#editAccountPopup form');
+            if(!form) return;
+
             if (!form.elements['성명'].value) {
                 showInfoPopup('성명은 필수 입력 항목입니다.');
                 return;
@@ -1061,26 +1062,23 @@
             };
 
             const newPassword = form.elements['password'].value;
-            if (newPassword && newPassword.length > 0) {
+            if (newPassword && newPassword.trim().length > 0) { // 공백만 있는 비밀번호 방지
                 accountData.password = newPassword;
             }
             const payload = {
-                userId: currentEditingAccountData.ID,
-                accountData: accountData
+                userId: currentEditingAccountData.ID, // 수정 대상 ID
+                accountData: accountData // 수정할 데이터
             };
             const response = await sendRequest('updateAccount', payload);
             if (response.status === 'success') {
-                showInfoPopup(response.message);
+                showInfoPopup(response.message || "계정 정보가 성공적으로 수정되었습니다.");
                 closePopup('editAccountPopup');
-                document.getElementById('infoPopupOkButton').onclick = () => {
-                    closePopup('infoPopup');
-                    loadAccountData();
-                };
+                const okButton = document.getElementById('infoPopupOkButton');
+                if(okButton) okButton.onclick = () => { closePopup('infoPopup'); loadAccountData(); };
             } else {
-                showInfoPopup(response.message);
+                showInfoPopup(response.message || "계정 정보 수정에 실패했습니다.");
             }
-            currentEditingAccountData = null;
-            currentEditingRowIndex = null;
+            currentEditingAccountData = null; // 작업 후 초기화
         }
 
         function handleDeleteConfirmationForAccount() {
@@ -1092,233 +1090,180 @@
                 showInfoPopup('자기 자신의 계정은 삭제할 수 없습니다.');
                 return;
             }
-            document.getElementById('confirmDeleteMessage').innerText = `ID "${currentEditingAccountData.ID}" 계정을 정말 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.`;
+            const confirmMsg = document.getElementById('confirmDeleteMessage');
+            if(confirmMsg) confirmMsg.innerText = `ID "${currentEditingAccountData.ID}" 계정을 정말 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.`;
+            
+            const okButton = document.getElementById('confirmDeleteOkButton');
+            if(okButton) okButton.onclick = executeAccountDeletion;
+            
+            const cancelButton = document.getElementById('confirmDeleteCancelButton');
+            if(cancelButton) cancelButton.onclick = () => closePopup('confirmDeletePopup');
+
             showPopup('confirmDeletePopup');
-            document.getElementById('confirmDeleteOkButton').onclick = executeAccountDeletion;
-            document.getElementById('confirmDeleteCancelButton').onclick = () => closePopup('confirmDeletePopup');
         }
 
         async function executeAccountDeletion() {
-            if (!currentEditingAccountData || !currentEditingAccountData.ID) { /* ... */ return; }
-            if (loggedInUser && loggedInUser.ID === currentEditingAccountData.ID) { /* ... */ return; }
+            if (!currentEditingAccountData || !currentEditingAccountData.ID) { 
+                closePopup('confirmDeletePopup'); return; 
+            }
+            if (loggedInUser && loggedInUser.ID === currentEditingAccountData.ID) { 
+                closePopup('confirmDeletePopup'); return; 
+            }
             closePopup('confirmDeletePopup');
             const response = await sendRequest('deleteAccount', { userId: currentEditingAccountData.ID });
             if (response.status === 'success') {
-                showInfoPopup(response.message);
-                closePopup('editAccountPopup');
-                document.getElementById('infoPopupOkButton').onclick = () => {
-                    closePopup('infoPopup');
-                    loadAccountData();
-                };
+                showInfoPopup(response.message || "계정이 성공적으로 삭제되었습니다.");
+                closePopup('editAccountPopup'); // 수정 팝업도 닫기
+                const okButton = document.getElementById('infoPopupOkButton');
+                if(okButton) okButton.onclick = () => { closePopup('infoPopup'); loadAccountData(); };
             } else {
-                showInfoPopup(response.message);
+                showInfoPopup(response.message || "계정 삭제에 실패했습니다.");
             }
-            currentEditingAccountData = null;
-            currentEditingRowIndex = null;
-            selectedAccountId = null; // 선택 해제
+            currentEditingAccountData = null; // 작업 후 초기화
         }
 
         function openUploadFolder(folderUrl) {
             window.open(folderUrl, '_blank', 'width=800,height=600,resizable=yes,scrollbars=yes');
         }
         
-        // Check-in Page Functions
+        // === Check-in Page Functions ===
         async function loadCheckInData() {
             if (!loggedInUser) return;
-            const response = await sendRequest('getCheckInData', {
-                // userName: loggedInUser.name, // Apps Script에서 user.name을 사용하므로 payload에 불필요할 수 있음
-                // isAdmin: loggedInUser.isAdmin
-            });
-
+            const response = await sendRequest('getCheckInData'); // 페이로드에 사용자 정보 불필요 (sendRequest에서 처리)
             if (response.status === 'success' && response.data) {
+                // 서버에서 정렬해서 보내주거나, 클라이언트에서 정렬
                 const sortedData = response.data.sort((a, b) => new Date(b.일자) - new Date(a.일자));
-                displayDataInTable(sortedData, 'checkInTable', CHECKIN_HEADERS); // 재활용
+                displayDataInTable(sortedData, 'checkInTable', CHECKIN_HEADERS, false, openEditCheckInPopup);
             } else {
                 showInfoPopup('Check-in 데이터를 불러오는데 실패했습니다: ' + (response.message || '알 수 없는 오류'));
-                displayDataInTable([], 'checkInTable', CHECKIN_HEADERS);
+                displayDataInTable([], 'checkInTable', CHECKIN_HEADERS, false, openEditCheckInPopup);
             }
         }
 
+        // clearCheckInInputs 함수는 checkInPage의 기본 입력 폼이 사라졌으므로, 필요 시 팝업용으로 수정하거나 삭제
+        /*
         function clearCheckInInputs(clearAuthor = true) {
-            if (clearAuthor) document.getElementById('checkInEntryAuthor').value = '';
-            // document.getElementById('checkInEntryDate').valueAsDate = new Date(); // 날짜는 오늘 날짜로 유지
-            document.getElementById('checkInEntryCategory').value = '업무';
-            document.getElementById('checkInEntryContent').value = '';
-            document.getElementById('checkInEntryStatus').value = 'Okay';
+            // 이 함수는 더 이상 사용되지 않을 수 있습니다.
+            // const authorInput = document.getElementById('checkInEntryAuthor');
+            // if (clearAuthor && authorInput) authorInput.value = '';
+            // ...
         }
+        */
 
+        // handleSaveCheckIn 함수는 checkInPage의 기본 입력 폼이 사라졌으므로, 필요 시 팝업용으로 수정하거나 삭제
+        /*
         async function handleSaveCheckIn() {
-            const author = document.getElementById('checkInEntryAuthor').value;
-            const date = document.getElementById('checkInEntryDate').value;
-            const category = document.getElementById('checkInEntryCategory').value;
-            const content = document.getElementById('checkInEntryContent').value;
-            const status = document.getElementById('checkInEntryStatus').value;
-
-            if (!date || !content) {
-                showInfoPopup('일자와 내용은 필수 입력 항목입니다.');
-                return;
-            }
-            const checkInData = { 작성자: author, 일자: date, 구분: category, 내용: content, 상태: status, 피드백: '' };
-            const response = await sendRequest('createCheckIn', { data: checkInData });
-
-            if (response.status === 'success') {
-                showInfoPopup(response.message || 'Check-in이 저장되었습니다.');
-                loadCheckInData();
-                clearCheckInInputs(false);
-                document.getElementById('checkInEntryContent').focus();
-            } else {
-                showInfoPopup('Check-in 저장 실패: ' + (response.message || '알 수 없는 오류'));
-            }
+            // 이 함수는 더 이상 사용되지 않을 수 있습니다.
+            // const author = document.getElementById('checkInEntryAuthor').value;
+            // ...
         }
+        */
         
-        // Dashboard Page Functions
-        async function loadDashboardData() {
-            if (!loggedInUser) return;
-            document.getElementById('dashboardCheckInTableBody').innerHTML = '<tr><td colspan="4">로딩 중...</td></tr>';
-            document.getElementById('dashboardPurchaseTableBody').innerHTML = '<tr><td colspan="3">로딩 중...</td></tr>';
-            document.getElementById('dashboardExpenseTableBody').innerHTML = '<tr><td colspan="3">로딩 중...</td></tr>';
-
-            const commonPayload = { limit: 10 }; // userName은 서버에서 loggedInUser.name으로 처리
-
-            const checkInResponse = await sendRequest('getCheckInData', commonPayload);
-            displayDashboardSummary(checkInResponse, 'dashboardCheckInTableBody', ['일자', '내용', '상태', '피드백']);
-
-            const purchaseResponse = await sendRequest('getPurchaseData', commonPayload);
-            displayDashboardSummary(purchaseResponse, 'dashboardPurchaseTableBody', ['세금계산서일자', '물품명', '합계']);
-            
-            const expenseResponse = await sendRequest('getExpenseData', commonPayload);
-            displayDashboardSummary(expenseResponse, 'dashboardExpenseTableBody', ['일자', '적요', '합계']);
-        }
-
-        function displayDashboardSummary(response, tableBodyId, headersToDisplay) {
-            const tableBody = document.getElementById(tableBodyId);
-            tableBody.innerHTML = '';
-
-            if (response.status === 'success' && response.data && response.data.length > 0) {
-                 // 최신순 정렬 (날짜 필드가 다를 수 있으므로, 각 타입에 맞게 정렬 필요)
-                let sortedData = response.data;
-                if (tableBodyId === 'dashboardCheckInTableBody' || tableBodyId === 'dashboardExpenseTableBody') {
-                    sortedData = response.data.sort((a, b) => new Date(b.일자) - new Date(a.일자));
-                } else if (tableBodyId === 'dashboardPurchaseTableBody') {
-                    // 구매는 세금계산서일자 또는 다른 기준의 날짜로 정렬
-                    sortedData = response.data.sort((a, b) => {
-                        const dateA = new Date(a.세금계산서일자 || a.다른날짜필드 || 0);
-                        const dateB = new Date(b.세금계산서일자 || b.다른날짜필드 || 0);
-                        return dateB - dateA;
-                    });
-                }
-
-
-                sortedData.slice(0, 5).forEach(rowData => {
-                    const row = tableBody.insertRow();
-                    headersToDisplay.forEach(headerKey => {
-                        const cell = row.insertCell();
-                        let cellValue = rowData[headerKey] === undefined ? '' : rowData[headerKey];
-                        if (headerKey === '합계') {
-                        cellValue = formatNumberWithCommas(cellValue);
-                        cell.classList.add('numeric');
-                        } else if (headerKey === '일자' || headerKey === '세금계산서일자') {
-                             cellValue = cellValue ? new Date(cellValue).toISOString().split('T')[0] : '';
-                        }
-                        cell.innerText = cellValue;
-                        if (headerKey === '내용' || headerKey === '구매품의명' || headerKey === '적요') {
-                            cell.title = rowData[headerKey];
-                        }
-                    });
-                });
-            } else {
-                tableBody.innerHTML = `<tr><td colspan="${headersToDisplay.length}">${response.message || '최근 기록이 없습니다.'}</td></tr>`;
-            }
-        }
+        // === Dashboard Page Functions ===
+        // loadDashboardData 와 displayDashboardSummary 함수는 HTML 내 <script> 태그로 옮겨져 개선됨. 여기서는 제거.
 
         window.onload = () => {
             showPage('loginPage');
-            // accountTable 클릭 이벤트는 displayDataInTable 내부에서 동적으로 바인딩하도록 변경
         };
 
         function openCheckInPopup() {
-            // 팝업 입력값 초기화
-            document.getElementById('popupCheckInEntryAuthor').value = loggedInUser ? loggedInUser.name : '';
-            // 날짜 오류 없이 yyyy-mm-dd로 세팅
-            const now = new Date();
-            const yyyy = now.getFullYear();
-            const mm = String(now.getMonth() + 1).padStart(2, '0');
-            const dd = String(now.getDate()).padStart(2, '0');
-            document.getElementById('popupCheckInEntryDate').value = `${yyyy}-${mm}-${dd}`;
-            document.getElementById('popupCheckInEntryCategory').value = '업무';
-            document.getElementById('popupCheckInEntryStatus').value = 'Okay';
-            document.getElementById('popupCheckInEntryContent').value = '';
+            const form = document.querySelector('#checkInPopupForm');
+            if(!form) return;
+            form.reset();
+
+            if(loggedInUser) form.elements['작성자'].value = loggedInUser.name;
+            form.elements['일자'].value = formatDateToYYYYMMDD(new Date());
+            form.elements['구분'].value = '업무';
+            form.elements['상태'].value = 'Okay';
+            form.elements['내용'].value = '';
             showPopup('checkInPopup');
         }
 
         async function handleSaveCheckInFromPopup() {
-            const author = document.getElementById('popupCheckInEntryAuthor').value;
-            const date = document.getElementById('popupCheckInEntryDate').value;
-            const category = document.getElementById('popupCheckInEntryCategory').value;
-            const content = document.getElementById('popupCheckInEntryContent').value;
-            const status = document.getElementById('popupCheckInEntryStatus').value;
+            const form = document.querySelector('#checkInPopupForm');
+            if(!form) return;
+
+            const author = form.elements['작성자'].value;
+            const date = form.elements['일자'].value;
+            const category = form.elements['구분'].value;
+            const content = form.elements['내용'].value;
+            const status = form.elements['상태'].value;
 
             if (!date || !content) {
                 showInfoPopup('일자와 내용은 필수 입력 항목입니다.');
                 return;
             }
+            // EntryID는 서버에서 생성, 피드백은 초기엔 비어있음
             const checkInData = { 작성자: author, 일자: date, 구분: category, 내용: content, 상태: status, 피드백: '' };
             const response = await sendRequest('createCheckIn', { data: checkInData });
 
             if (response.status === 'success') {
                 showInfoPopup(response.message || 'Check-in이 저장되었습니다.');
                 closePopup('checkInPopup');
-                loadCheckInData();
+                if(document.getElementById('checkInPage').style.display === 'block') loadCheckInData(); // 체크인 페이지 보고 있을 때만 새로고침
+                if(document.getElementById('dashboardPage').style.display === 'block') loadDashboardData(); // 대시보드 보고 있을 때 새로고침
             } else {
                 showInfoPopup('Check-in 저장 실패: ' + (response.message || '알 수 없는 오류'));
             }
         }
 
         function openEditCheckInPopup(rowData) {
-            document.getElementById('editCheckInEntryAuthor').value = rowData['작성자'] || '';
-            if (rowData['일자']) {
-                const dateObj = new Date(rowData['일자']);
-                if (!isNaN(dateObj.getTime())) {
-                    const yyyy = dateObj.getFullYear();
-                    const mm = String(dateObj.getMonth() + 1).padStart(2, '0');
-                    const dd = String(dateObj.getDate()).padStart(2, '0');
-                    document.getElementById('editCheckInEntryDate').value = `${yyyy}-${mm}-${dd}`;
-                } else {
-                    document.getElementById('editCheckInEntryDate').value = rowData['일자'];
-                }
-            } else {
-                document.getElementById('editCheckInEntryDate').value = '';
-            }
-            document.getElementById('editCheckInEntryCategory').value = rowData['구분'] || '업무';
-            document.getElementById('editCheckInEntryStatus').value = rowData['상태'] || 'Okay';
-            document.getElementById('editCheckInEntryContent').value = rowData['내용'] || '';
-            // 수정 대상 rowIndex/EntryID 저장
-            window.editingCheckInRowIndex = rowData.rowIndex;
-            window.editingCheckInEntryID = rowData.EntryID;
+            const form = document.querySelector('#editCheckInPopupForm');
+            if(!form) return;
+            form.reset();
+
+            form.elements['작성자'].value = rowData['작성자'] || '';
+            form.elements['일자'].value = formatDateToYYYYMMDD(rowData['일자']);
+            form.elements['구분'].value = rowData['구분'] || '업무';
+            form.elements['상태'].value = rowData['상태'] || 'Okay';
+            form.elements['내용'].value = rowData['내용'] || '';
+            
+            // 수정 대상 식별자 저장 (EntryID가 더 확실한 식별자)
+            window.editingCheckInEntryID = rowData.EntryID; 
+            window.editingCheckInRowIndex = rowData.rowIndex; // rowIndex도 여전히 사용될 수 있음 (서버 로직에 따라)
             showPopup('editCheckInPopup');
         }
 
         async function handleSaveCheckInFromEditPopup() {
-            const author = document.getElementById('editCheckInEntryAuthor').value;
-            const date = document.getElementById('editCheckInEntryDate').value;
-            const category = document.getElementById('editCheckInEntryCategory').value;
-            const content = document.getElementById('editCheckInEntryContent').value;
-            const status = document.getElementById('editCheckInEntryStatus').value;
+            const form = document.querySelector('#editCheckInPopupForm');
+            if(!form) return;
+
+            const author = form.elements['작성자'].value; // 작성자는 수정 불가하도록 readonly 처리됨
+            const date = form.elements['일자'].value;
+            const category = form.elements['구분'].value;
+            const content = form.elements['내용'].value;
+            const status = form.elements['상태'].value;
+
             if (!date || !content) {
                 showInfoPopup('일자와 내용은 필수 입력 항목입니다.');
                 return;
             }
-            const checkInData = { 작성자: author, 일자: date, 구분: category, 내용: content, 상태: status, 피드백: '' };
-            const payload = { rowIndex: window.editingCheckInRowIndex, data: checkInData };
+            // 수정 시에는 기존 피드백 값을 유지해야 할 수 있으나, 현재 폼에는 피드백 필드가 없음.
+            // 서버에서 기존 피드백을 보존하도록 처리하거나, 필요 시 폼에 피드백 필드 추가.
+            // 여기서는 팝업에서 입력된 값만으로 업데이트.
+            const checkInData = { 작성자: author, 일자: date, 구분: category, 내용: content, 상태: status }; 
+            
+            const payload = { 
+                entryId: window.editingCheckInEntryID, // EntryID로 업데이트
+                rowIndex: window.editingCheckInRowIndex, // rowIndex도 전달 (서버에서 둘 다 사용 가능)
+                data: checkInData 
+            };
             const response = await sendRequest('updateCheckIn', payload);
+
             if (response.status === 'success') {
                 showInfoPopup(response.message || 'Check-in이 수정되었습니다.');
                 closePopup('editCheckInPopup');
-                loadCheckInData();
+                if(document.getElementById('checkInPage').style.display === 'block') loadCheckInData();
+                if(document.getElementById('dashboardPage').style.display === 'block') loadDashboardData();
             } else {
                 showInfoPopup('Check-in 수정 실패: ' + (response.message || '알 수 없는 오류'));
             }
+            window.editingCheckInEntryID = null; // 작업 후 초기화
+            window.editingCheckInRowIndex = null;
         }
+
+        // handleDeleteCheckInFromEditPopup 함수 (필요시 구현)
+        // async function handleDeleteCheckInFromEditPopup() { ... }
     </script>
 
     <div id="loginPage" class="page">
@@ -1332,124 +1277,111 @@
     </div>
 
     <div id="dashboardPage" class="page container">
-    <div class="header">
-        <div>
-            <h2>Dashboard</h2>
-            <div class="user-info"><span id="dashboard-user-info"></span></div>
-        </div>
-        <div class="buttons">
-            <button class="refresh-button" onclick="loadDashboardData()">새로고침</button>
-            <button class="nav-button" onclick="showPage('dashboardPage')">대시보드</button>
-            <button class="nav-button" onclick="showPage('checkInPage')">Check-in</button>
-            <button class="nav-button" onclick="showPage('purchasePage')">구매관리</button>
-            <button class="nav-button" onclick="showPage('expensePage')">개인경비</button>
-            <button class="nav-button" id="navButtonAdminPageDashboard" onclick="showPage('adminPage')" style="display:none;">관리자</button>
-        </div>
-    </div>
-    <div class="dashboard-grid">
-        <!-- 체크인 보드 (세로) -->
-        <div class="dashboard-section">
-            <h3>최근 Check-in (최대 5건)</h3>
-            <table id="dashboardCheckInTable">
-                <thead>
-                    <tr>
-                        <th>일자</th>
-                        <th>내용</th>
-                        <th>상태</th>
-                        <th>피드백</th>
-                    </tr>
-                </thead>
-                <tbody id="dashboardCheckInTableBody"></tbody>
-            </table>
-            <div class="dashboard-link">
-                <button class="nav-button" onclick="showPage('checkInPage')">Check-in 전체보기 & 작성</button>
+        <div class="header">
+            <div>
+                <h2>Dashboard</h2>
+                <div class="user-info"><span></span></div>
             </div>
-        </div>
-        <!-- 구매/경비 보드 (가로 2분할) -->
-        <div class="dashboard-row">
-            <div class="dashboard-section">
-                <h3>최근 구매관리 (최대 5건)</h3>
-                <table id="dashboardPurchaseTable">
-                    <thead>
-                        <tr>
-                            <th>계산서일자</th>
-                            <th>물품명</th>
-                            <th>합계</th>
-                        </tr>
-                    </thead>
-                    <tbody id="dashboardPurchaseTableBody"></tbody>
-                </table>
-                <div class="dashboard-link">
-                    <button class="nav-button" onclick="showPage('purchasePage')">구매관리 전체보기 & 작성</button>
+            <div class="buttons">
+                <button class="refresh-button" onclick="loadDashboardData()">새로고침</button>
+                <button class="nav-button" onclick="showPage('dashboardPage')">대시보드</button>
+                <button class="nav-button" onclick="showPage('checkInPage')">Check-in</button>
+                <button class="nav-button" onclick="showPage('purchasePage')">구매관리</button>
+                <button class="nav-button" onclick="showPage('expensePage')">개인경비</button>
+                <button class="nav-button" id="navButtonAdminPageDashboard" onclick="showPage('adminPage')" style="display:none;">관리자</button>
                 </div>
-            </div>
+        </div>
+        <div class="dashboard-grid">
             <div class="dashboard-section">
-                <h3>최근 개인경비 (최대 5건)</h3>
-                <table id="dashboardExpenseTable">
+                <h3>최근 Check-in</h3>
+                <table id="dashboardCheckInTable">
                     <thead>
                         <tr>
                             <th>일자</th>
-                            <th>적요</th>
-                            <th>합계</th>
+                            <th>내용</th>
+                            <th>상태</th>
+                            <th>피드백</th>
                         </tr>
                     </thead>
-                    <tbody id="dashboardExpenseTableBody"></tbody>
+                    <tbody id="dashboardCheckInTableBody"></tbody>
                 </table>
                 <div class="dashboard-link">
-                    <button class="nav-button" onclick="showPage('expensePage')">개인경비 전체보기 & 작성</button>
+                    <button class="nav-button" onclick="showPage('checkInPage')">Check-in 전체보기 & 작성</button>
+                </div>
+            </div>
+            <div class="dashboard-row">
+                <div class="dashboard-section">
+                    <h3>최근 구매관리</h3>
+                    <table id="dashboardPurchaseTable">
+                        <thead>
+                            <tr>
+                                <th>계산서일자</th>
+                                <th>물품명</th>
+                                <th>합계</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dashboardPurchaseTableBody"></tbody>
+                    </table>
+                    <div class="dashboard-link">
+                        <button class="nav-button" onclick="showPage('purchasePage')">구매관리 전체보기 & 작성</button>
+                    </div>
+                </div>
+                <div class="dashboard-section">
+                    <h3>최근 개인경비</h3>
+                    <table id="dashboardExpenseTable">
+                        <thead>
+                            <tr>
+                                <th>일자</th>
+                                <th>적요</th>
+                                <th>합계</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dashboardExpenseTableBody"></tbody>
+                    </table>
+                    <div class="dashboard-link">
+                        <button class="nav-button" onclick="showPage('expensePage')">개인경비 전체보기 & 작성</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 <script>
-// Dashboard 데이터 표시 함수 수정
+// Dashboard 데이터 표시 함수 (개선된 버전)
 function displayDashboardSummary(response, tableBodyId, headersToDisplay) {
     const tableBody = document.getElementById(tableBodyId);
+    if(!tableBody) return;
     tableBody.innerHTML = '';
 
     if (response.status === 'success' && response.data && response.data.length > 0) {
-        // 최신순 정렬
-        let sortedData = response.data;
-        if (tableBodyId === 'dashboardCheckInTableBody' || tableBodyId === 'dashboardExpenseTableBody') {
-            sortedData = response.data.sort((a, b) => new Date(b.일자) - new Date(a.일자));
-        } else if (tableBodyId === 'dashboardPurchaseTableBody') {
-            sortedData = response.data.sort((a, b) => {
-                const dateA = new Date(a.세금계산서일자 || a.다른날짜필드 || 0);
-                const dateB = new Date(b.세금계산서일자 || b.다른날짜필드 || 0);
-                return dateB - dateA;
-            });
-        }
-        sortedData.slice(0, 5).forEach(rowData => {
+        // 서버에서 이미 정렬 및 limit 적용된 데이터를 받는다고 가정 (loadDashboardData에서 limit:10 요청)
+        // 따라서 클라이언트 측 slice는 필요 없음.
+
+        response.data.forEach(rowData => { 
             const row = tableBody.insertRow();
-            headersToDisplay.forEach((headerKey, idx) => {
+            headersToDisplay.forEach((headerKey) => {
                 const cell = row.insertCell();
-                let cellValue = rowData[headerKey] === undefined ? '' : rowData[headerKey];
-                // 체크인: 일자(0), 내용(1), 상태(2), 피드백(3)
+                let cellValue = rowData[headerKey] === undefined || rowData[headerKey] === null ? '' : rowData[headerKey];
+                
                 if (tableBodyId === 'dashboardCheckInTableBody') {
-                    if (headerKey === '일자') {
-                        cellValue = cellValue ? new Date(cellValue).toISOString().split('T')[0] : '';
-                    }
+                    if (headerKey === '일자') cellValue = formatDateToYYYYMMDD(cellValue);
                     if (headerKey === '내용' || headerKey === '피드백') {
                         cell.style.whiteSpace = 'normal';
-                        cell.style.wordBreak = 'break-all';
-                        cell.title = rowData[headerKey];
+                        cell.style.wordBreak = 'break-all'; 
+                        cell.title = rowData[headerKey]; 
                     }
-                }
-                // 구매관리: 합계(콤마)
-                if (tableBodyId === 'dashboardPurchaseTableBody' && headerKey === '합계') {
-                    cellValue = formatNumberWithCommas(cellValue);
-                    cell.classList.add('numeric');
-                }
-                // 경비관리: 합계(콤마)
-                if (tableBodyId === 'dashboardExpenseTableBody' && headerKey === '합계') {
-                    cellValue = formatNumberWithCommas(cellValue);
-                    cell.classList.add('numeric');
-                }
-                // 날짜 포맷
-                if ((headerKey === '일자' || headerKey === '세금계산서일자') && cellValue) {
-                    cellValue = new Date(cellValue).toISOString().split('T')[0];
+                } else if (tableBodyId === 'dashboardPurchaseTableBody') {
+                    if (headerKey === '세금계산서일자') cellValue = formatDateToYYYYMMDD(cellValue);
+                    if (headerKey === '합계') {
+                        cellValue = formatNumberWithCommas(cellValue);
+                        cell.classList.add('numeric');
+                    }
+                } else if (tableBodyId === 'dashboardExpenseTableBody') {
+                    if (headerKey === '일자') cellValue = formatDateToYYYYMMDD(cellValue);
+                    if (headerKey === '합계') {
+                        cellValue = formatNumberWithCommas(cellValue);
+                        cell.classList.add('numeric');
+                    }
                 }
                 cell.innerText = cellValue;
             });
@@ -1458,28 +1390,28 @@ function displayDashboardSummary(response, tableBodyId, headersToDisplay) {
         tableBody.innerHTML = `<tr><td colspan="${headersToDisplay.length}">${response.message || '최근 기록이 없습니다.'}</td></tr>`;
     }
 }
-</script>
 
-<!-- Dashboard 데이터 요청 함수에서 컬럼 순서 맞추기 -->
-<script>
+// Dashboard 데이터 요청 함수 (개선된 버전)
 async function loadDashboardData() {
     if (!loggedInUser) return;
-    document.getElementById('dashboardCheckInTableBody').innerHTML = '<tr><td colspan="4">로딩 중...</td></tr>';
-    document.getElementById('dashboardPurchaseTableBody').innerHTML = '<tr><td colspan="3">로딩 중...</td></tr>';
-    document.getElementById('dashboardExpenseTableBody').innerHTML = '<tr><td colspan="3">로딩 중...</td></tr>';
+    
+    const checkInTbody = document.getElementById('dashboardCheckInTableBody');
+    const purchaseTbody = document.getElementById('dashboardPurchaseTableBody');
+    const expenseTbody = document.getElementById('dashboardExpenseTableBody');
 
-    const commonPayload = { limit: 10 };
+    if(checkInTbody) checkInTbody.innerHTML = '<tr><td colspan="4">로딩 중...</td></tr>';
+    if(purchaseTbody) purchaseTbody.innerHTML = '<tr><td colspan="3">로딩 중...</td></tr>';
+    if(expenseTbody) expenseTbody.innerHTML = '<tr><td colspan="3">로딩 중...</td></tr>';
+    
+    const payloadWithLimit = { limit: 5 }; // 서버에 10개 데이터 요청
 
-    // 체크인: 일자, 내용, 상태, 피드백
-    const checkInResponse = await sendRequest('getCheckInData', commonPayload);
+    const checkInResponse = await sendRequest('getCheckInData', payloadWithLimit); 
     displayDashboardSummary(checkInResponse, 'dashboardCheckInTableBody', ['일자', '내용', '상태', '피드백']);
 
-    // 구매관리: 계산서일자, 물품명, 합계
-    const purchaseResponse = await sendRequest('getPurchaseData', commonPayload);
+    const purchaseResponse = await sendRequest('getPurchaseData', payloadWithLimit);
     displayDashboardSummary(purchaseResponse, 'dashboardPurchaseTableBody', ['세금계산서일자', '물품명', '합계']);
 
-    // 경비관리: 일자, 적요, 합계
-    const expenseResponse = await sendRequest('getExpenseData', commonPayload);
+    const expenseResponse = await sendRequest('getExpenseData', payloadWithLimit);
     displayDashboardSummary(expenseResponse, 'dashboardExpenseTableBody', ['일자', '적요', '합계']);
 }
 </script>
@@ -1488,7 +1420,7 @@ async function loadDashboardData() {
         <div class="header">
             <div>
                 <h2>구매관리</h2>
-                <div class="user-info"><span id="purchase-user-info"></span></div>
+                <div class="user-info"><span></span></div>
             </div>
             <div class="buttons">
                 <button class="action-button" onclick="openNewEntryPopup('purchase')">신규 작성</button>
@@ -1511,7 +1443,7 @@ async function loadDashboardData() {
         <div class="header">
             <div>
                 <h2>개인경비관리</h2>
-                <div class="user-info"><span id="expense-user-info"></span></div>
+                <div class="user-info"><span></span></div>
             </div>
             <div class="buttons">
                 <button class="action-button" onclick="openNewEntryPopup('expense')">신규 작성</button>
@@ -1534,18 +1466,16 @@ async function loadDashboardData() {
         <div class="header">
             <div>
                 <h2>Check-in!!</h2>
-                <div class="user-info"><span id="checkin-user-info"></span></div>
+                <div class="user-info"><span></span></div>
             </div>
             <div class="buttons">
-                <button class="action-button" onclick="openCheckInPopup()">신규 작성</button>
-                <button class="refresh-button" onclick="loadCheckInData()">새로고침</button>
+                <button class="action-button" onclick="openCheckInPopup()">신규 작성</button> <button class="refresh-button" onclick="loadCheckInData()">새로고침</button>
                 <button class="nav-button" onclick="showPage('dashboardPage')">대시보드</button>
                 <button class="nav-button" onclick="showPage('checkInPage')">Check-in</button>
                 <button class="nav-button" onclick="showPage('purchasePage')">구매관리</button>
                 <button class="nav-button" onclick="showPage('expensePage')">개인경비</button>
             </div>
         </div>
-        <!-- 체크인 입력 폼 영역 삭제됨 -->
         <div class="data-section">
             <table id="checkInTable">
                 <thead><tr><th>작성자</th><th>일자</th><th>구분</th><th>내용</th><th>상태</th><th>피드백</th></tr></thead>
@@ -1555,94 +1485,48 @@ async function loadDashboardData() {
     </div>
 
     <div id="checkInPopup" class="popup-overlay">
-    <div class="popup-content" style="max-width:700px;">
-        <h3>새로운 Check-in 작성</h3>
-        <form id="checkInPopupForm">
-            <div class="form-group"><label for="popupCheckInEntryAuthor">작성자:</label><input type="text" id="popupCheckInEntryAuthor" name="작성자" readonly></div>
-            <div class="form-group"><label for="popupCheckInEntryDate">일자:</label><input type="date" id="popupCheckInEntryDate" name="일자"></div>
-            <div class="form-group"><label for="popupCheckInEntryCategory">구분:</label>
-                <select id="popupCheckInEntryCategory" name="구분">
-                    <option value="업무">업무</option>
-                    <option value="요청">요청</option>
-                    <option value="일상">일상</option>
-                    <option value="기분">기분</option>
-                    <option value="기타">기타</option>
-                </select>
-            </div>
-            <div class="form-group"><label for="popupCheckInEntryStatus">상태:</label>
-                <select id="popupCheckInEntryStatus" name="상태">
-                    <option value="Great">Great</option>
-                    <option value="Good">Good</option>
-                    <option value="Okay" selected>Okay</option>
-                    <option value="No Good">No Good</option>
-                    <option value="Poor">Poor</option>
-                </select>
-            </div>
-            <div class="form-group full-width">
-                <label for="popupCheckInEntryContent">내용:</label>
-                <textarea id="popupCheckInEntryContent" name="내용" rows="4" style="min-height:90px;"></textarea>
-            </div>
-            <div class="button-group">
-                <button type="button" class="save-button" onclick="handleSaveCheckInFromPopup()">SAVE</button>
-                <button type="button" class="cancel-button" onclick="closePopup('checkInPopup')">CANCEL</button>
-            </div>
-        </form>
+        <div class="popup-content"> <h3>새로운 Check-in 작성</h3>
+            <form id="checkInPopupForm">
+                <div class="form-group"><label for="popupCheckInEntryAuthor">작성자:</label><input type="text" id="popupCheckInEntryAuthor" name="작성자" readonly></div>
+                <div class="form-group"><label for="popupCheckInEntryDate">일자:</label><input type="date" id="popupCheckInEntryDate" name="일자"></div>
+                <div class="form-group"><label for="popupCheckInEntryCategory">구분:</label>
+                    <select id="popupCheckInEntryCategory" name="구분">
+                        <option value="업무">업무</option><option value="요청">요청</option><option value="일상">일상</option><option value="기분">기분</option><option value="기타">기타</option>
+                    </select>
+                </div>
+                <div class="form-group"><label for="popupCheckInEntryStatus">상태:</label>
+                    <select id="popupCheckInEntryStatus" name="상태">
+                        <option value="Great">Great</option><option value="Good">Good</option><option value="Okay" selected>Okay</option><option value="No Good">No Good</option><option value="Poor">Poor</option>
+                    </select>
+                </div>
+                <div class="form-group full-width">
+                    <label for="popupCheckInEntryContent">내용:</label>
+                    <textarea id="popupCheckInEntryContent" name="내용" rows="4"></textarea> </div>
+                <div class="button-group">
+                    <button type="button" class="save-button" onclick="handleSaveCheckInFromPopup()">SAVE</button>
+                    <button type="button" class="cancel-button" onclick="closePopup('checkInPopup')">CANCEL</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-<style>
-    #checkInPopup .popup-content {
-        max-width: 700px;
-        width: 90%;
-    }
-    #checkInPopup form {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-    }
-    #checkInPopup .form-group.full-width {
-        grid-column: 1 / -1;
-    }
-    #checkInPopup textarea {
-        min-height: 90px;
-        resize: vertical;
-    }
-    #checkInPopup .button-group {
-        grid-column: 1 / -1;
-        text-align: right;
-        margin-top: 10px;
-        display: flex;
-        justify-content: flex-end;
-        gap: 8px;
-    }
-</style>
 
     <div id="editCheckInPopup" class="popup-overlay">
-        <div class="popup-content" style="max-width:700px;">
-            <h3>Check-in 수정/삭제</h3>
-            <form id="editCheckInPopupForm">
+        <div class="popup-content"> <h3>Check-in 수정</h3> <form id="editCheckInPopupForm">
                 <div class="form-group"><label for="editCheckInEntryAuthor">작성자:</label><input type="text" id="editCheckInEntryAuthor" name="작성자" readonly></div>
                 <div class="form-group"><label for="editCheckInEntryDate">일자:</label><input type="date" id="editCheckInEntryDate" name="일자"></div>
                 <div class="form-group"><label for="editCheckInEntryCategory">구분:</label>
                     <select id="editCheckInEntryCategory" name="구분">
-                        <option value="업무">업무</option>
-                        <option value="요청">요청</option>
-                        <option value="일상">일상</option>
-                        <option value="기분">기분</option>
-                        <option value="기타">기타</option>
+                        <option value="업무">업무</option><option value="요청">요청</option><option value="일상">일상</option><option value="기분">기분</option><option value="기타">기타</option>
                     </select>
                 </div>
                 <div class="form-group"><label for="editCheckInEntryStatus">상태:</label>
                     <select id="editCheckInEntryStatus" name="상태">
-                        <option value="Great">Great</option>
-                        <option value="Good">Good</option>
-                        <option value="Okay" selected>Okay</option>
-                        <option value="No Good">No Good</option>
-                        <option value="Poor">Poor</option>
+                        <option value="Great">Great</option><option value="Good">Good</option><option value="Okay">Okay</option> <option value="No Good">No Good</option><option value="Poor">Poor</option>
                     </select>
                 </div>
                 <div class="form-group full-width">
                     <label for="editCheckInEntryContent">내용:</label>
-                    <textarea id="editCheckInEntryContent" name="내용" rows="4" style="min-height:90px;"></textarea>
+                    <textarea id="editCheckInEntryContent" name="내용" rows="4"></textarea>
                 </div>
                 <div class="button-group">
                     <button type="button" class="save-button" onclick="handleSaveCheckInFromEditPopup()">SAVE</button>
@@ -1656,7 +1540,7 @@ async function loadDashboardData() {
         <div class="header">
             <div>
                 <h2>관리자 페이지</h2>
-                <div class="user-info"><span id="admin-user-info"></span></div>
+                <div class="user-info"><span></span></div>
             </div>
             <div class="buttons">
                 <button class="action-button admin-create-button" onclick="openNewAccountPopup()">계정 생성</button>
@@ -1665,8 +1549,7 @@ async function loadDashboardData() {
                 <button class="nav-button" onclick="showPage('checkInPage')">Check-in</button>
                 <button class="nav-button" onclick="showPage('purchasePage')">구매관리</button>
                 <button class="nav-button" onclick="showPage('expensePage')">개인경비</button>
-                <button class="nav-button" id="navButtonFeedbackPageAdmin" onclick="showPage('feedbackPage')" style="display:none;">피드백관리</button>
-            </div>
+                </div>
         </div>
         <div class="data-section">
             <table id="accountTable">
@@ -1679,8 +1562,7 @@ async function loadDashboardData() {
     <div id="newUserPopup" class="popup-overlay">
         <div class="popup-content">
             <h3>신규계정 생성</h3>
-            <form>
-                <div class="form-group"><label for="newAccountId">ID:</label><input type="text" id="newAccountId" name="ID" required></div>
+            <form id="newUserPopupForm"> <div class="form-group"><label for="newAccountId">ID:</label><input type="text" id="newAccountId" name="ID" required></div>
                 <div class="form-group"><label for="newUserPassword">Password:</label><input type="password" id="newUserPassword" name="password" required></div>
                 <div class="form-group"><label for="newUserAffiliation">소속:</label><input type="text" id="newUserAffiliation" name="소속"></div>
                 <div class="form-group"><label for="newUserName">성명:</label><input type="text" id="newUserName" name="성명" required></div>
@@ -1700,36 +1582,36 @@ async function loadDashboardData() {
                 <div class="form-group"><label for="newPurchase_담당자">담당자:</label><input type="text" id="newPurchase_담당자" name="담당자" readonly></div>
                 <div class="form-group">
                     <label for="newPurchase_구매구분">구매구분:</label>
-                    <select name="구매구분">
+                    <select id="newPurchase_구매구분" name="구매구분">
                         <option value="재료">재료</option><option value="장비">장비</option><option value="비품">비품</option><option value="소모품">소모품</option><option value="기타">기타</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="newPurchase_프로젝트">프로젝트:</label>
-                    <select name="프로젝트">
+                    <select id="newPurchase_프로젝트" name="프로젝트">
                         <option value="세포외기질">세포외기질</option><option value="지혈제">지혈제</option><option value="인공간">인공간</option><option value="기타">기타</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="newPurchase_국책과제여부">국책과제여부:</label>
-                    <select name="국책과제여부"><option value="일반">일반</option><option value="국책과제">국책과제</option></select>
+                    <select id="newPurchase_국책과제여부" name="국책과제여부"><option value="일반">일반</option><option value="국책과제">국책과제</option></select>
                 </div>
-                <div class="form-group"><label for="newPurchase_구매품의번호">구매품의번호:</label><input type="text" name="구매품의번호"></div>
-                <div class="form-group"><label for="newPurchase_구매품의명">구매품의명:</label><input type="text" name="구매품의명"></div>
-                <div class="form-group"><label for="newPurchase_품의서링크">품의서링크:</label><input type="text" name="품의서링크"></div>
-                <div class="form-group"><label for="newPurchase_구매처">구매처:</label><input type="text" name="구매처"></div>
-                <div class="form-group"><label for="newPurchase_물품명">물품명:</label><input type="text" name="물품명"></div>
-                <div class="form-group"><label for="newPurchase_단가">단가:</label><input type="text" name="단가"></div>
-                <div class="form-group"><label for="newPurchase_수량">수량:</label><input type="text" name="수량"></div>
-                <div class="form-group"><label for="newPurchase_공급가">공급가:</label><input type="text" name="공급가"></div>
-                <div class="form-group"><label for="newPurchase_부가세">부가세:</label><input type="text" name="부가세"></div>
-                <div class="form-group"><label for="newPurchase_합계">합계:</label><input type="text" name="합계" readonly></div>
-                <div class="form-group"><label for="newPurchase_세금계산서일자">세금계산서일자:</label><input type="date" name="세금계산서일자"></div>
-                <div class="form-group"><label for="newPurchase_비고">비고:</label><input type="text" name="비고"></div>
+                <div class="form-group"><label for="newPurchase_구매품의번호">구매품의번호:</label><input type="text" id="newPurchase_구매품의번호" name="구매품의번호"></div>
+                <div class="form-group"><label for="newPurchase_구매품의명">구매품의명:</label><input type="text" id="newPurchase_구매품의명" name="구매품의명"></div>
+                <div class="form-group"><label for="newPurchase_품의서링크">품의서링크:</label><input type="text" id="newPurchase_품의서링크" name="품의서링크"></div>
+                <div class="form-group"><label for="newPurchase_구매처">구매처:</label><input type="text" id="newPurchase_구매처" name="구매처"></div>
+                <div class="form-group"><label for="newPurchase_물품명">물품명:</label><input type="text" id="newPurchase_물품명" name="물품명"></div>
+                <div class="form-group"><label for="newPurchase_단가">단가:</label><input type="text" id="newPurchase_단가" name="단가"></div>
+                <div class="form-group"><label for="newPurchase_수량">수량:</label><input type="text" id="newPurchase_수량" name="수량"></div>
+                <div class="form-group"><label for="newPurchase_공급가">공급가:</label><input type="text" id="newPurchase_공급가" name="공급가"></div>
+                <div class="form-group"><label for="newPurchase_부가세">부가세:</label><input type="text" id="newPurchase_부가세" name="부가세"></div>
+                <div class="form-group"><label for="newPurchase_합계">합계:</label><input type="text" id="newPurchase_합계" name="합계" readonly></div>
+                <div class="form-group"><label for="newPurchase_세금계산서일자">세금계산서일자:</label><input type="date" id="newPurchase_세금계산서일자" name="세금계산서일자"></div>
+                <div class="form-group"><label for="newPurchase_비고">비고:</label><input type="text" id="newPurchase_비고" name="비고"></div>
                 <div class="form-group">
                     <label for="newPurchase_증빙">증빙:</label>
                     <div class="upload-button-group">
-                        <input type="text" name="증빙">
+                        <input type="text" id="newPurchase_증빙" name="증빙">
                         <button type="button" onclick="openUploadFolder('https://drive.google.com/drive/folders/1kOGLuw3IMCot0VtjCM5AP0uGKDSW8dm9?usp=sharing')">업로드</button>
                     </div>
                 </div>
@@ -1864,8 +1746,7 @@ async function loadDashboardData() {
     <div id="editAccountPopup" class="popup-overlay">
         <div class="popup-content">
             <h3>계정정보 수정/삭제</h3>
-            <form>
-                <div class="form-group"><label for="editAccount_ID">ID:</label><input type="text" id="editAccount_ID" name="ID" readonly></div>
+            <form id="editAccountPopupForm"> <div class="form-group"><label for="editAccount_ID">ID:</label><input type="text" id="editAccount_ID" name="ID" readonly></div>
                 <div class="form-group"><label for="editAccount_password">Password:</label><input type="password" id="editAccount_password" name="password" placeholder="새 비밀번호 (변경 시에만 입력)"></div>
                 <div class="form-group"><label for="editAccount_소속">소속:</label><input type="text" id="editAccount_소속" name="소속"></div>
                 <div class="form-group"><label for="editAccount_성명">성명:</label><input type="text" id="editAccount_성명" name="성명"></div>
